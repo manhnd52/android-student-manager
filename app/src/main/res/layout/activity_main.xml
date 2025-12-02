@@ -5,68 +5,29 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/form_container"
+    <TextView
+        android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="8dp"
-        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:text="Danh sách sinh viên"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/input_student_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Mã số sinh viên"
-            android:inputType="text"
-            android:imeOptions="actionNext" />
-
-        <EditText
-            android:id="@+id/input_student_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Họ tên"
-            android:inputType="textPersonName"
-            android:imeOptions="actionDone" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="end"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add" />
-
-            <Button
-                android:id="@+id/button_update"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Update" />
-        </LinearLayout>
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/student_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/form_container"
+        app:layout_constraintTop_toBottomOf="@id/title"
         tools:listitem="@layout/item_student" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
