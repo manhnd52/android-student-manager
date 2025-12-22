@@ -30,17 +30,5 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/item_student" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabAddStudent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/add_student"
-            android:src="@drawable/ic_add_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_margin="24dp"
-            app:layout_constraintEnd_margin="24dp" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

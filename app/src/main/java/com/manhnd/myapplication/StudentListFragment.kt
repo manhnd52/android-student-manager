@@ -28,19 +28,18 @@ class StudentListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = StudentAdapter(emptyList()) { student ->
+        adapter = StudentAdapter(emptyList(), { student ->
             val args = Bundle().apply { putInt("studentId", student.id) }
             findNavController().navigate(
                 R.id.action_studentListFragment_to_updateStudentFragment,
                 args
             )
+        }, {
+            viewModel.removeStudent(it.id)
         }
+        )
         binding.rvStudents.layoutManager = LinearLayoutManager(requireContext())
         binding.rvStudents.adapter = adapter
-
-        binding.fabAddStudent.setOnClickListener {
-            findNavController().navigate(R.id.action_studentListFragment_to_addStudentFragment)
-        }
 
         viewModel.students.observe(viewLifecycleOwner) { students ->
             adapter.submitList(students)

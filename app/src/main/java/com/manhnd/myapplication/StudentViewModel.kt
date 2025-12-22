@@ -10,15 +10,19 @@ class StudentViewModel : ViewModel() {
 
     private var currentId = 1
 
-    fun addStudent(name: String, age: Int, major: String) {
-        val newStudent = Student(currentId++, name, age, major)
+    fun addStudent(name: String, mssv: String) {
+        val newStudent = Student(currentId++, name, mssv)
         _students.value = _students.value.orEmpty() + newStudent
     }
 
-    fun updateStudent(id: Int, name: String, age: Int, major: String) {
+    fun updateStudent(id: Int, name: String, mssv: String) {
         _students.value = _students.value.orEmpty().map {
-            if (it.id == id) it.copy(name = name, age = age, major = major) else it
+            if (it.id == id) it.copy(name = name, mssv = mssv) else it
         }
+    }
+
+    fun removeStudent(id: Int) {
+        _students.value = _students.value.orEmpty().filter { it.id != id }
     }
 
     fun getStudentById(id: Int): Student? {

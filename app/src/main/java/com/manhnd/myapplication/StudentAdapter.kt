@@ -3,12 +3,14 @@ package com.manhnd.myapplication
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class StudentAdapter(
     private var students: List<Student>,
-    private val onItemClick: (Student) -> Unit
+    private val onItemClick: (Student) -> Unit,
+    private val onDeleteClick: (Student) -> Unit
 ) : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
@@ -30,14 +32,14 @@ class StudentAdapter(
 
     inner class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameText: TextView = itemView.findViewById(R.id.tvName)
-        private val ageText: TextView = itemView.findViewById(R.id.tvAge)
-        private val majorText: TextView = itemView.findViewById(R.id.tvMajor)
+        private val mssvText: TextView = itemView.findViewById(R.id.tvMssv)
+        private val deleteBtn: ImageButton = itemView.findViewById(R.id.btnDelete)
 
         fun bind(student: Student) {
             nameText.text = student.name
-            ageText.text = itemView.context.getString(R.string.student_age_format, student.age)
-            majorText.text = student.major
+            mssvText.text = student.mssv
             itemView.setOnClickListener { onItemClick(student) }
+            deleteBtn.setOnClickListener { onDeleteClick(student) }
         }
     }
 }

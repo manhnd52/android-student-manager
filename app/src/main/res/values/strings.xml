@@ -5,10 +5,9 @@
     <string name="title_update_student">Cập nhật sinh viên</string>
     <string name="add_student">Thêm sinh viên</string>
     <string name="hint_student_name">Họ và tên</string>
-    <string name="hint_student_age">Tuổi</string>
+    <string name="hint_student_mssv">MSSV</string>
     <string name="hint_student_major">Chuyên ngành</string>
     <string name="save">Lưu</string>
     <string name="update">Cập nhật</string>
     <string name="empty_student_list">Chưa có sinh viên nào</string>
-    <string name="student_age_format">Tuổi: %1$d</string>
 </resources>

@@ -29,11 +29,9 @@ class AddStudentFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSave.setOnClickListener {
             val name = binding.etName.text.toString()
-            val ageText = binding.etAge.text.toString()
-            val major = binding.etMajor.text.toString()
-            if (name.isNotBlank() && ageText.isNotBlank() && major.isNotBlank()) {
-                val age = ageText.toIntOrNull() ?: return@setOnClickListener
-                viewModel.addStudent(name, age, major)
+            val mssv = binding.etMssv.text.toString()
+            if (name.isNotBlank() && mssv.isNotBlank()) {
+                viewModel.addStudent(name, mssv)
                 findNavController().navigateUp()
             }
         }

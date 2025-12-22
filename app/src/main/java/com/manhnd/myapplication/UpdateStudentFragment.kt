@@ -36,17 +36,14 @@ class UpdateStudentFragment : Fragment() {
         val student = viewModel.getStudentById(studentId)
         student?.let {
             binding.etName.setText(it.name)
-            binding.etAge.setText(it.age.toString())
-            binding.etMajor.setText(it.major)
+            binding.etMssv.setText(it.mssv)
         }
 
         binding.btnUpdate.setOnClickListener {
             val name = binding.etName.text.toString()
-            val ageText = binding.etAge.text.toString()
-            val major = binding.etMajor.text.toString()
-            if (studentId != -1 && name.isNotBlank() && ageText.isNotBlank() && major.isNotBlank()) {
-                val age = ageText.toIntOrNull() ?: return@setOnClickListener
-                viewModel.updateStudent(studentId, name, age, major)
+            val mssv = binding.etMssv.text.toString()
+            if (studentId != -1 && name.isNotBlank() && mssv.isNotBlank() ) {
+                viewModel.updateStudent(studentId, name, mssv)
                 findNavController().navigateUp()
             }
         }
