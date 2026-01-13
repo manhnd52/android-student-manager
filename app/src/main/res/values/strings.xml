@@ -1,13 +1,11 @@
 <resources>
     <string name="app_name">Student Manager</string>
     <string name="title_student_list">Danh sách sinh viên</string>
-    <string name="title_add_student">Thêm sinh viên</string>
-    <string name="title_update_student">Cập nhật sinh viên</string>
-    <string name="add_student">Thêm sinh viên</string>
-    <string name="hint_student_name">Họ và tên</string>
-    <string name="hint_student_mssv">MSSV</string>
-    <string name="hint_student_major">Chuyên ngành</string>
-    <string name="save">Lưu</string>
-    <string name="update">Cập nhật</string>
+    <string name="title_student_detail">Chi tiết sinh viên</string>
+    <string name="student_thumbnail">Ảnh đại diện sinh viên</string>
+    <string name="label_student_name">Họ tên: %1$s</string>
+    <string name="label_student_mssv">MSSV: %1$s</string>
+    <string name="label_student_birth">Ngày sinh: %1$s</string>
+    <string name="label_student_email">Email: %1$s</string>
     <string name="empty_student_list">Chưa có sinh viên nào</string>
 </resources>
