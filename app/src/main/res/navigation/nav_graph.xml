@@ -11,24 +11,15 @@
         android:label="@string/title_student_list"
         tools:layout="@layout/fragment_student_list">
         <action
-            android:id="@+id/action_studentListFragment_to_addStudentFragment"
-            app:destination="@id/addStudentFragment" />
-        <action
-            android:id="@+id/action_studentListFragment_to_updateStudentFragment"
-            app:destination="@id/updateStudentFragment" />
+            android:id="@+id/action_studentListFragment_to_studentDetailFragment"
+            app:destination="@id/studentDetailFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/addStudentFragment"
-        android:name="com.manhnd.myapplication.AddStudentFragment"
-        android:label="@string/title_add_student"
-        tools:layout="@layout/fragment_add_student" />
-
-    <fragment
-        android:id="@+id/updateStudentFragment"
-        android:name="com.manhnd.myapplication.UpdateStudentFragment"
-        android:label="@string/title_update_student"
-        tools:layout="@layout/fragment_update_student">
+        android:id="@+id/studentDetailFragment"
+        android:name="com.manhnd.myapplication.StudentDetailFragment"
+        android:label="@string/title_student_detail"
+        tools:layout="@layout/fragment_student_detail">
         <argument
             android:name="studentId"
             app:argType="integer" />
